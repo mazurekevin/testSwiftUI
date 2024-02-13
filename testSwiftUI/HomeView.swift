@@ -11,6 +11,7 @@ import Alamofire
 struct HomeView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, Monde!"/*@END_MENU_TOKEN@*/)
+            
     }
 }
 
