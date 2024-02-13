@@ -8,12 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var test = true
     var body: some View {
         VStack {
-            Image(systemName: "globe")
+            Image("mediscoopLogo")
+                .resizable()
+                .scaledToFit()
+                .frame(height: 200.0)
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello, world!")
+                
+            Text("Je suis le test")
+                .font(.title)
+            Spacer()
+            Button(test ? "test":"test2"){
+                test.toggle()
+            }.buttonStyle(.borderedProminent)
+                .tint(Color.red)
+                .foregroundColor(Color.white)
+                .padding()
         }
         .padding()
     }
