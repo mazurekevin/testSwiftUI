@@ -19,6 +19,10 @@
 		39BFE9672B504F9A00B2934C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BFE9662B504F9A00B2934C /* HomeView.swift */; };
 		39D183442C061A1400CFAACB /* article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D183432C061A1400CFAACB /* article.swift */; };
 		39D183482C061B5500CFAACB /* author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D183472C061B5500CFAACB /* author.swift */; };
+		39D1834A2C06227700CFAACB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D183492C06227700CFAACB /* LoginView.swift */; };
+		39D1834C2C0622C200CFAACB /* LoginOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1834B2C0622C200CFAACB /* LoginOperations.swift */; };
+		39D1834E2C0622DE00CFAACB /* loginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1834D2C0622DE00CFAACB /* loginRequest.swift */; };
+		39D183502C06232600CFAACB /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1834F2C06232600CFAACB /* ApiRequest.swift */; };
 		9CC1A714830990BDC7393389 /* Pods_testSwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB65814B15E8629A6669A17A /* Pods_testSwiftUI.framework */; };
 		D05BD04FDABFEE47AE897A1B /* Pods_testSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 003CCDEDD3A5C2D884638078 /* Pods_testSwiftUITests.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +63,10 @@
 		39BFE9662B504F9A00B2934C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		39D183432C061A1400CFAACB /* article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = article.swift; sourceTree = "<group>"; };
 		39D183472C061B5500CFAACB /* author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = author.swift; sourceTree = "<group>"; };
+		39D183492C06227700CFAACB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		39D1834B2C0622C200CFAACB /* LoginOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOperations.swift; sourceTree = "<group>"; };
+		39D1834D2C0622DE00CFAACB /* loginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginRequest.swift; sourceTree = "<group>"; };
+		39D1834F2C06232600CFAACB /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		6007015DD785A61D2EC34076 /* Pods-testSwiftUI-testSwiftUIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testSwiftUI-testSwiftUIUITests.release.xcconfig"; path = "Target Support Files/Pods-testSwiftUI-testSwiftUIUITests/Pods-testSwiftUI-testSwiftUIUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7DB1E3016C29E704C8EF8234 /* Pods-testSwiftUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testSwiftUITests.debug.xcconfig"; path = "Target Support Files/Pods-testSwiftUITests/Pods-testSwiftUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		94A3838F5F42260EC27783F6 /* Pods-testSwiftUI-testSwiftUIUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testSwiftUI-testSwiftUIUITests.debug.xcconfig"; path = "Target Support Files/Pods-testSwiftUI-testSwiftUIUITests/Pods-testSwiftUI-testSwiftUIUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +147,10 @@
 				39BFE9402B5038D000B2934C /* Preview Content */,
 				39BFE9642B504EB900B2934C /* testObjet.swift */,
 				39BFE9662B504F9A00B2934C /* HomeView.swift */,
+				39D183492C06227700CFAACB /* LoginView.swift */,
+				39D1834B2C0622C200CFAACB /* LoginOperations.swift */,
+				39D1834D2C0622DE00CFAACB /* loginRequest.swift */,
+				39D1834F2C06232600CFAACB /* ApiRequest.swift */,
 			);
 			path = testSwiftUI;
 			sourceTree = "<group>";
@@ -442,10 +454,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				39BFE93D2B5038CF00B2934C /* ContentView.swift in Sources */,
+				39D1834A2C06227700CFAACB /* LoginView.swift in Sources */,
 				39D183442C061A1400CFAACB /* article.swift in Sources */,
 				39BFE9672B504F9A00B2934C /* HomeView.swift in Sources */,
 				39BFE93B2B5038CF00B2934C /* testSwiftUIApp.swift in Sources */,
+				39D1834C2C0622C200CFAACB /* LoginOperations.swift in Sources */,
+				39D1834E2C0622DE00CFAACB /* loginRequest.swift in Sources */,
 				39D183482C061B5500CFAACB /* author.swift in Sources */,
+				39D183502C06232600CFAACB /* ApiRequest.swift in Sources */,
 				39BFE9652B504EB900B2934C /* testObjet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

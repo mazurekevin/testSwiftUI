@@ -22,7 +22,7 @@ struct Author: Identifiable {
     let city: String
     let country: String
     let picture: String
-    @Published var favorite: Bool
+    var favorite: Bool
     let about: String
 
     init(json: JSON) {

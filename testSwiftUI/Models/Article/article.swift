@@ -26,7 +26,7 @@ struct Article: Identifiable {
     let body: String
     let vimeoLink: String
     let authorisedComments: Bool
-    @Published var favorite: Bool
+    var favorite: Bool
     let category: String
     let categoryColor: String
 
