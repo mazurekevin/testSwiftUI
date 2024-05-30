@@ -34,6 +34,7 @@
 		39D1AF432C0894AC00EEA39E /* ChatroomsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1AF422C0894AC00EEA39E /* ChatroomsListView.swift */; };
 		39D1AF462C08985400EEA39E /* Chatroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1AF452C08985400EEA39E /* Chatroom.swift */; };
 		39D1AF482C08988500EEA39E /* ChatroomRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1AF472C08988500EEA39E /* ChatroomRowView.swift */; };
+		39D1AF4C2C0908A600EEA39E /* VideoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1AF4B2C0908A600EEA39E /* VideoRowView.swift */; };
 		9CC1A714830990BDC7393389 /* Pods_testSwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB65814B15E8629A6669A17A /* Pods_testSwiftUI.framework */; };
 		D05BD04FDABFEE47AE897A1B /* Pods_testSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 003CCDEDD3A5C2D884638078 /* Pods_testSwiftUITests.framework */; };
 /* End PBXBuildFile section */
@@ -89,6 +90,7 @@
 		39D1AF422C0894AC00EEA39E /* ChatroomsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomsListView.swift; sourceTree = "<group>"; };
 		39D1AF452C08985400EEA39E /* Chatroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chatroom.swift; sourceTree = "<group>"; };
 		39D1AF472C08988500EEA39E /* ChatroomRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomRowView.swift; sourceTree = "<group>"; };
+		39D1AF4B2C0908A600EEA39E /* VideoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRowView.swift; sourceTree = "<group>"; };
 		6007015DD785A61D2EC34076 /* Pods-testSwiftUI-testSwiftUIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testSwiftUI-testSwiftUIUITests.release.xcconfig"; path = "Target Support Files/Pods-testSwiftUI-testSwiftUIUITests/Pods-testSwiftUI-testSwiftUIUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7DB1E3016C29E704C8EF8234 /* Pods-testSwiftUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testSwiftUITests.debug.xcconfig"; path = "Target Support Files/Pods-testSwiftUITests/Pods-testSwiftUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		94A3838F5F42260EC27783F6 /* Pods-testSwiftUI-testSwiftUIUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testSwiftUI-testSwiftUIUITests.debug.xcconfig"; path = "Target Support Files/Pods-testSwiftUI-testSwiftUIUITests/Pods-testSwiftUI-testSwiftUIUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 		39BFE9392B5038CF00B2934C /* testSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				39D1AF492C08C34200EEA39E /* RowView */,
 				39D183522C06673200CFAACB /* Api */,
 				39D183512C06671600CFAACB /* View */,
 				39D183422C0619DF00CFAACB /* Models */,
@@ -171,9 +174,7 @@
 				39BFE9402B5038D000B2934C /* Preview Content */,
 				39BFE9642B504EB900B2934C /* testObjet.swift */,
 				39D183612C0668A800CFAACB /* NavBar.swift */,
-				39D183672C0777CA00CFAACB /* ArticleRowView.swift */,
 				39D183692C07B41700CFAACB /* HeaderView.swift */,
-				39D1AF472C08988500EEA39E /* ChatroomRowView.swift */,
 			);
 			path = testSwiftUI;
 			sourceTree = "<group>";
@@ -308,6 +309,24 @@
 				39D1AF452C08985400EEA39E /* Chatroom.swift */,
 			);
 			path = Chatrooms;
+			sourceTree = "<group>";
+		};
+		39D1AF492C08C34200EEA39E /* RowView */ = {
+			isa = PBXGroup;
+			children = (
+				39D1AF4A2C09089600EEA39E /* Video */,
+				39D1AF472C08988500EEA39E /* ChatroomRowView.swift */,
+				39D183672C0777CA00CFAACB /* ArticleRowView.swift */,
+			);
+			path = RowView;
+			sourceTree = "<group>";
+		};
+		39D1AF4A2C09089600EEA39E /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				39D1AF4B2C0908A600EEA39E /* VideoRowView.swift */,
+			);
+			path = Video;
 			sourceTree = "<group>";
 		};
 		BACBE2B8A607EB349DA28885 /* Frameworks */ = {
@@ -561,6 +580,7 @@
 				39D183662C066D6900CFAACB /* ArticleRequest.swift in Sources */,
 				39BFE93D2B5038CF00B2934C /* ContentView.swift in Sources */,
 				39D1835A2C0667D600CFAACB /* ArticleListView.swift in Sources */,
+				39D1AF4C2C0908A600EEA39E /* VideoRowView.swift in Sources */,
 				39D1834A2C06227700CFAACB /* LoginView.swift in Sources */,
 				39D183442C061A1400CFAACB /* article.swift in Sources */,
 				39BFE9672B504F9A00B2934C /* HomeView.swift in Sources */,
