@@ -10,6 +10,16 @@ struct LoginView: View {
     @State private var isLoggedIn = false // State to track login status
 
     var body: some View {
+        Group {
+            if isLoggedIn {
+                NavBar()
+            } else {
+                loginForm
+            }
+        }
+    }
+
+    var loginForm: some View {
         VStack {
             TextField("Email", text: $email)
                 .autocapitalization(.none)
@@ -45,13 +55,10 @@ struct LoginView: View {
         .alert(isPresented: $showingAlert) {
             Alert(title: Text("Error"), message: Text(errorMessage ?? "Unknown error"), dismissButton: .default(Text("OK")))
         }
-        .navigationDestination(isPresented: $isLoggedIn) {
-            HomeView() // Navigate to HomeView after login
-        }
     }
 
     private func login() {
-        let loginRequest = LoginRequest.login(email: email, password: password)
+        let loginRequest = LoginRequest.login(email: "kmazure@teamdoc.fr", password: "Jesuislemdp-06")
         let loginOperation = LoginOperations.custom(loginRequest)
         
         loginOperation.performRequest { json in
@@ -63,14 +70,6 @@ struct LoginView: View {
             errorMessage = error.localizedDescription
             showingAlert = true
         }
-    }
-}
-
-struct HomeView2: View {
-    var body: some View {
-        Text("Welcome to the Home Page")
-            .font(.largeTitle)
-            .padding()
     }
 }
 

@@ -11,9 +11,7 @@ import SwiftUI
 struct testSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                LoginView()
-            }
+            LoginView()
         }
     }
 }
