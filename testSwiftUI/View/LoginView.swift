@@ -64,6 +64,7 @@ struct LoginView: View {
         loginOperation.performRequest { json in
             // Handle successful login
             print("Login successful: \(String(describing: json))")
+            Config.instance.token = json!["token"].stringValue
             isLoggedIn = true
         } failure: { error in
             // Handle login failure

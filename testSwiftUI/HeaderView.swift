@@ -24,6 +24,7 @@ struct HeaderView: View {
             Text(self.title)
                 .font(.largeTitle)
                 .fontWeight(.bold)
+            
             if self.forChatroom == true{
                 
                 Button(action: {
