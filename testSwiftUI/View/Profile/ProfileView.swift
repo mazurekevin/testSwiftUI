@@ -10,13 +10,14 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
-        VStack(alignment: .leading) {
-            // Header
-            Spacer(minLength: 15)
-            HeaderView(title: "Mon Profil", forChatroom: false)
-                .padding(.bottom, 20)
+        NavigationStack{
+            VStack(alignment: .leading) {
+                // Header
+                Spacer(minLength: 15)
+                HeaderView(title: "Mon Profil", forChatroom: false)
+                    .padding(.bottom, 20)
                 
-
+                
                 Image(systemName: "person.circle")
                     .resizable()
                     .frame(width: 100, height: 100)
@@ -29,21 +30,30 @@ struct ProfileView: View {
                     .foregroundColor(.gray)
                 
                 
-            // Menu Section
-            List {
-                ProfileMenuItem(iconName: "person.circle", text: "Mon identité")
-                ProfileMenuItem(iconName: "globe", text: "Langue(s)")
-                ProfileMenuItem(iconName: "envelope", text: "Moyens de contact")
-                ProfileMenuItem(iconName: "briefcase", text: "Identité Professionnelle")
-                ProfileMenuItem(iconName: "key", text: "Changer de mot de passe")
-                ProfileMenuItem(iconName: "questionmark.circle", text: "Aide")
-                ProfileMenuItem(iconName: "power", text: "Déconnexion")
+                // Menu Section
+                List {
+                    NavigationLink(destination: IdentityView()
+                        .toolbar(.hidden, for: .tabBar)
+                        .toolbar(.hidden, for: .navigationBar)
+                    ) {
+                        ProfileMenuItem(iconName: "person.circle", text: "Mon identité")
+                    }
+
+                    ProfileMenuItem(iconName: "globe", text: "Langue(s)")
+                    ProfileMenuItem(iconName: "envelope", text: "Moyens de contact")
+                    ProfileMenuItem(iconName: "briefcase", text: "Identité Professionnelle")
+                    ProfileMenuItem(iconName: "key", text: "Changer de mot de passe")
+                    ProfileMenuItem(iconName: "questionmark.circle", text: "Aide")
+                    ProfileMenuItem(iconName: "power", text: "Déconnexion")
+                }
+                .listStyle(InsetGroupedListStyle())
+                .padding(.horizontal,-20)
             }
-            .listStyle(InsetGroupedListStyle())
-            .padding(.horizontal,-20)
-        }.padding(.horizontal,20)
+            .padding(.horizontal,20)
+            
+            
+        }
     }
-    
 }
 
 struct ProfileMenuItem: View {
@@ -60,9 +70,7 @@ struct ProfileMenuItem: View {
             Text(text)
                 .foregroundColor(.primary)
                 .padding(.horizontal,20)
-            Spacer()
-            Image(systemName: "chevron.right")
-                .foregroundColor(.gray)
+            
         }
         .padding(.vertical, 5)
     }
