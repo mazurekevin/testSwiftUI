@@ -92,8 +92,8 @@ struct IdentityView: View {
     }
 }
 
-/*struct IdentityView_Previews: PreviewProvider {
+struct IdentityView_Previews: PreviewProvider {
     static var previews: some View {
         IdentityView()
     }
-}*/
+}

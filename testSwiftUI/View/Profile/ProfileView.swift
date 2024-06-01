@@ -38,10 +38,14 @@ struct ProfileView: View {
                     ) {
                         ProfileMenuItem(iconName: "person.circle", text: "Mon identité")
                     }
-
                     ProfileMenuItem(iconName: "globe", text: "Langue(s)")
                     ProfileMenuItem(iconName: "envelope", text: "Moyens de contact")
-                    ProfileMenuItem(iconName: "briefcase", text: "Identité Professionnelle")
+                    NavigationLink(destination: IdentityProView()
+                        .toolbar(.hidden, for: .tabBar)
+                        .toolbar(.hidden, for: .navigationBar)
+                    ){
+                        ProfileMenuItem(iconName: "briefcase", text: "Identité Professionnelle")
+                    }
                     ProfileMenuItem(iconName: "key", text: "Changer de mot de passe")
                     ProfileMenuItem(iconName: "questionmark.circle", text: "Aide")
                     ProfileMenuItem(iconName: "power", text: "Déconnexion")
