@@ -10,9 +10,9 @@ import Foundation
 import SwiftUI
 
 struct IdentityProView: View {
-    @State private var profession: String = "Medecin"
+    @State private var profession: String = "Médecin"
     @State private var rpps: String = "1234567"
-    @State private var speciality: String = "radiologie"
+    @State private var speciality: String = "Radiologie"
     @State private var placeJob: String = "Hôpital"
     @State private var postalCode: String = "95320"
     @State private var city: String = "Paris"
@@ -20,228 +20,109 @@ struct IdentityProView: View {
     @State private var showProfessionPicker: Bool = false
     @State private var showSpecialityPicker: Bool = false
     @State private var showPlaceJobPicker: Bool = false
-        
-    var professions = ["Chiropracteur", "Médecin", "Infirmier", "Pharmacien", "Dentiste"]
-    var specalities = ["Radiologie", "Cardiologie", "Neurologie"]
-    var placeJobs = ["Hopital", "Clinique", "Urgence", "Pharmacie"]
-        
+    
+    let professions = ["Chiropracteur", "Médecin", "Infirmier", "Pharmacien", "Dentiste"]
+    let specialities = ["Radiologie", "Cardiologie", "Neurologie"]
+    let placeJobs = ["Hôpital", "Clinique", "Urgence", "Pharmacie"]
     
     @Environment(\.presentationMode) private var presentationMode
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
-            HStack {
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    Image(systemName: "chevron.left")
-                        .foregroundColor(.black)
-                }
-                Spacer()
-                Text("Identité Professionnelle")
-                    .font(.headline)
-                Spacer()
-                Button(action: {
-                    // Action pour enregistrer les changements
-                }) {
-                    Text("Enregistrer")
-                        .foregroundColor(.black)
-                }
-            }
-            .padding()
-
+            headerView()
+            
             VStack(alignment: .leading, spacing: 10) {
+                pickerSection(title: "Profession", selectedItem: $profession, showPicker: $showProfessionPicker, items: professions)
                 
-                VStack(alignment: .leading) {
-                    Text("Profession: ")
-                        .font(.headline)
-                        .padding(.top, 5)
-                    
-                    HStack {
-                        Text(profession)
-                            .font(.system(size: 18))
-                            .foregroundColor(.black)
-                            .padding(.horizontal, 5)
-                        
-                        Spacer()
-                        
-                        Image(systemName: "chevron.down")
-                            .foregroundColor(.gray)
-                            .padding(.horizontal, 5)
-                    }
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        showProfessionPicker.toggle()
-                    }
-                    .padding(.vertical, 10)
-                    .background(Color.white)
-                    .cornerRadius(10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.gray, lineWidth: 1)
-                    )
-                    .sheet(isPresented: $showProfessionPicker) {
-                        VStack {
-                            Text("Sélectionnez une profession")
-                                .font(.headline)
-                                .padding()
-                            
-                            List {
-                                ForEach(professions, id: \.self) { profession in
-                                    Button(action: {
-                                        self.profession = profession
-                                        showProfessionPicker = false
-                                    }) {
-                                        Text(profession)
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                labeledTextField(label: "RPPS", text: $rpps)
                 
-                Text("RPPS: ")
-                    .font(.headline)
-                TextField("RPPS", text: $rpps)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.gray, lineWidth: 1)
-                    )
+                pickerSection(title: "Spécialité", selectedItem: $speciality, showPicker: $showSpecialityPicker, items: specialities)
                 
-                VStack(alignment: .leading) {
-                    Text("Spécialité: ")
-                        .font(.headline)
-                        .padding(.top, 5)
-                    
-                    HStack {
-                        Text(speciality)
-                            .font(.system(size: 18))
-                            .foregroundColor(.black)
-                            .padding(.horizontal, 5)
-                        
-                        Spacer()
-                        
-                        Image(systemName: "chevron.down")
-                            .foregroundColor(.gray)
-                            .padding(.horizontal, 5)
-                    }
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        showSpecialityPicker.toggle()
-                    }
-                    .padding(.vertical, 10)
-                    .background(Color.white)
-                    .cornerRadius(10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.gray, lineWidth: 1)
-                    )
-                    .sheet(isPresented: $showSpecialityPicker) {
-                        VStack {
-                            Text("Sélectionnez une spécialité")
-                                .font(.headline)
-                                .padding()
-                            
-                            List {
-                                ForEach(specalities, id: \.self) { spe in
-                                    Button(action: {
-                                        self.speciality = spe
-                                        showSpecialityPicker = false
-                                    }) {
-                                        Text(spe)
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                pickerSection(title: "Lieu d'exercice", selectedItem: $placeJob, showPicker: $showPlaceJobPicker, items: placeJobs)
                 
-                VStack(alignment: .leading) {
-                    Text("Lieu d'exercice: ")
-                        .font(.headline)
-                        .padding(.top, 5)
-                    
-                    HStack {
-                        Text(placeJob)
-                            .font(.system(size: 18))
-                            .foregroundColor(.black)
-                            .padding(.horizontal, 5)
-                        
-                        Spacer()
-                        
-                        Image(systemName: "chevron.down")
-                            .foregroundColor(.gray)
-                            .padding(.horizontal, 5)
-                    }
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        showPlaceJobPicker.toggle()
-                    }
-                    .padding(.vertical, 10)
-                    .background(Color.white)
-                    .cornerRadius(10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.gray, lineWidth: 1)
-                    )
-                    .sheet(isPresented: $showPlaceJobPicker) {
-                        VStack {
-                            Text("Sélectionnez un lieu")
-                                .font(.headline)
-                                .padding()
-                            
-                            List {
-                                ForEach(placeJobs, id: \.self) { place in
-                                    Button(action: {
-                                        self.placeJob = place
-                                        showPlaceJobPicker = false
-                                    }) {
-                                        Text(place)
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                labeledTextField(label: "Code postal", text: $postalCode)
                 
+                labeledTextField(label: "Ville", text: $city)
                 
-                Text("Code postal: ")
-                    .font(.headline)
-                TextField("postalCode", text: $postalCode)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.gray, lineWidth: 1)
-                    )
-                
-                Text("Ville: ")
-                    .font(.headline)
-                TextField("city", text: $city)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.gray, lineWidth: 1)
-                    )
-                
-                Text("Pays: ")
-                    .font(.headline)
-                TextField("Country", text: $country)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.gray, lineWidth: 1)
-                    )
-                
+                labeledTextField(label: "Pays", text: $country)
             }
             .padding()
             Spacer()
         }
-        
+    }
+    
+    private func headerView() -> some View {
+        HStack {
+            Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }) {
+                Image(systemName: "chevron.left")
+                    .foregroundColor(.black)
+            }
+            Spacer()
+            Text("Identité Professionnelle")
+                .font(.headline)
+            Spacer()
+            Button(action: {
+                // Action pour enregistrer les changements
+            }) {
+                Text("Enregistrer")
+                    .foregroundColor(.black)
+            }
+        }
+        .padding()
+    }
+    
+    private func pickerSection(title: String, selectedItem: Binding<String>, showPicker: Binding<Bool>, items: [String]) -> some View {
+        VStack(alignment: .leading) {
+            Text("\(title): ")
+                .font(.headline)
+                .padding(.top, 5)
+            
+            HStack {
+                Text(selectedItem.wrappedValue)
+                    .font(.system(size: 18))
+                    .foregroundColor(.black)
+                    .padding(.horizontal, 5)
+                
+                Spacer()
+                
+                Image(systemName: "chevron.down")
+                    .foregroundColor(.gray)
+                    .padding(.horizontal, 5)
+            }
+            .contentShape(Rectangle())
+            .onTapGesture {
+                showPicker.wrappedValue.toggle()
+            }
+            .padding(.vertical, 10)
+            .background(Color.white)
+            .cornerRadius(10)
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.gray, lineWidth: 1)
+            )
+            .sheet(isPresented: showPicker) {
+                CategorieView(title: title.lowercased(), items: items, selectedItem: selectedItem, isPresented: showPicker)
+            }
+        }
+    }
+    
+    private func labeledTextField(label: String, text: Binding<String>) -> some View {
+        VStack(alignment: .leading) {
+            Text("\(label): ")
+                .font(.headline)
+            TextField(label, text: text)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.gray, lineWidth: 1)
+                )
+        }
     }
 }
 
-struct IdentityProViewView_Previews: PreviewProvider {
+struct IdentityProView_Previews: PreviewProvider {
     static var previews: some View {
         IdentityProView()
     }
